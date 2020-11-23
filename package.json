@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "vum-appium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "webdriverio": "^6.4.5",
+    "ws": "^7.3.1"
+  }
+}

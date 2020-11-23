@@ -1,0 +1,26 @@
+version: "3.8"
+
+x-default: &default
+  # cpus: 0.5
+  # mem_limit: 500M
+  restart: always
+  env_file:
+    - .env
+  tty: true
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "10M"
+      max-file: "3"
+
+services:
+  appium:
+    <<: *default
+    build: .
+    container_name: vum-appium-local
+    privileged: true
+    ports:
+      - 4723:4723
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - .:/app
